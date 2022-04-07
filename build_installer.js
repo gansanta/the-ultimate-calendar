@@ -7,7 +7,7 @@ const path = require('path');
 // 2. Define input and output directory.
 // Important: the directories must be absolute, not relative e.g
 // appDirectory: "C:\\Users\sdkca\Desktop\OurCodeWorld-win32-x64", 
-const APP_DIR = path.resolve(__dirname, './LunarCalendar-win32-x64');
+const APP_DIR = path.resolve(__dirname, './ultimate_calendar-win32-x64');
 // outputDirectory: "C:\\Users\sdkca\Desktop\windows_installer", 
 const OUT_DIR = path.resolve(__dirname, './windows_installer');
 
@@ -17,9 +17,9 @@ const msiCreator = new MSICreator({
     outputDirectory: OUT_DIR,
     appIconPath: __dirname + "/image/moon.ico",
     // Configure metadata
-    description: 'Lunar Calendar showing full moon, pali months and adhimasa',
-    exe: 'LunarCalendar',
-    name: 'LunarCalendar',
+    description: 'The ultimate Calendar showing full moon, pali months and adhimasa',
+    exe: 'ultimate_calendar',
+    name: 'ultimate_calendar',
     manufacturer: 'Gansanta Bhikkhu',
     version: '1.0.0',
 
