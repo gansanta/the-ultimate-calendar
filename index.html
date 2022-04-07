@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>lunar_calendar</title>
+    <script ></script>
+
+</head>
+<body>
+    <h1 align="center">Buddhist Lunar Calendar</h1>
+    <div id="maincontent" class="maincontent">
+        <div class="inputbox">
+            <button id="prev">Prev</button>
+            <input id="input" placeholder="-622" type="number" value="-622" />
+            <button id="next">Next</button>
+            <!-- <button id="text2datebtn">convert text to datelist</button> -->
+            <!-- <button id="convert2data">convert to data</button>-->
+            <br>
+            <button id="showcal">ShowCalendar</button>
+            <button id="clear">clear</button>
+        </div>
+        
+        <div id="output">
+            <ul id="outputul"></ul>
+            <ol id="outputol"></ol>
+            
+            <div id="outputdiv"></div>
+        </div>
+    </div>
+
+
+    <!-- Load js-->
+    <script src="./js/moondata.js" charset="utf-8"></script>
+    <!-- Load module -->
+    <script type="module" src="./modules/index.js" charset="utf-8"></script>
+
+    <!-- Load css -->
+    <link rel="stylesheet" href="./css/index.css" />
+    
+</body>
+</html>

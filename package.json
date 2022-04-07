@@ -1,0 +1,21 @@
+{
+  "name": "great_calendar",
+  
+  "version": "0.01.20220407.01",
+  "description": "The ultimate calendar. Also a Buddhist Lunar calendar with adhimāsa",
+  "main": "main.js",
+  "author": {
+    "name": "gsb"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^16.0.4",
+    "electron-wix-msi": "^4.0.0",
+    "exe-icon-extractor": "^1.0.8"
+  },
+  "dependencies": {
+    "nedb": "^1.8.0"
+  }
+}
