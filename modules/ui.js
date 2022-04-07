@@ -419,11 +419,8 @@ function showNextCalendar(){
     let input = document.getElementById("input")
     if(!input.value) return 
     
-    let value = input.value
-    let result = Math.abs(parseInt(value)) + 1
-    if(value.startsWith("-")) result = -result
-    
-    input.value = result
+    let value = parseInt(input.value)
+    input.value = value + 1 
     
     showCalendar()
 }
@@ -433,11 +430,18 @@ function showPreviousCalendar(){
     let input = document.getElementById("input")
     if(!input.value) return 
 
-    let value = input.value
-    let result = Math.abs(parseInt(value)) - 1
-    if(value.startsWith("-")) result = -result
+    let value = parseInt(input.value)
     
-    input.value = result
+    /*
+    if(value <= 0) result = value - 1
+    else result = value + 1
+
+    let value = parseInt(input.value)
+    let result = null 
+    */
+    
+    
+    input.value = value - 1 
     showCalendar()
 }
 
