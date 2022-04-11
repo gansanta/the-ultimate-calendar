@@ -216,7 +216,7 @@ function getAbsoluteYear(year){
  * @param {*} lunardates array of dates with lunar phases for the whole year 
  */
 function fillTheCalendar(myear, isAdhimasa=null, lunardates=null){
-    let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Augx","Sep","Oct","Nov","Dec"]
+    let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
     
     let maincontent = document.getElementById("maincontent")
     
