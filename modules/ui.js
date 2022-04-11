@@ -194,10 +194,32 @@ function getModifiedDates(dates, fullmoondates,fullmooncounter){
     return {isAdhimasa:isAdhimasa, dates: dates}
 
 }
+
+/**
+ * 
+ * @param {*} year 
+ * @returns year+"BC" or year+"AD"
+ */
 function getAbsoluteYear(year){
     let absoluteyear = year
     if(year.startsWith("-")){
         absoluteyear = Math.abs(parseInt(year)) + " BC"
+    }
+    else if(Math.abs(parseInt(year)) == 0){
+        absoluteyear =  "1 BC" //exceptional case
+    }
+    else {
+        absoluteyear = Math.abs(parseInt(year)) + " AD"
+    }
+    return absoluteyear
+}
+
+function getBuddhaYear(year){
+    let buddhaera = ""
+    let absoluteyear = Math.abs(parseInt(year))
+
+    if(year.startsWith("-")){
+        if(absoluteyear > )
     }
     else if(Math.abs(parseInt(year)) == 0){
         absoluteyear =  "1 BC" //exceptional case
@@ -430,16 +452,6 @@ function showPreviousCalendar(){
     if(!input.value) return 
 
     let value = parseInt(input.value)
-    
-    /*
-    if(value <= 0) result = value - 1
-    else result = value + 1
-
-    let value = parseInt(input.value)
-    let result = null 
-    */
-    
-    
     input.value = value - 1 
     showCalendar()
 }
