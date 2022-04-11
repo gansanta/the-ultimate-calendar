@@ -135,7 +135,6 @@ function getLunarDates(year, val){
  * @param {*} val raw text data of lunar phases for a century
  */
 function getModifiedDates(dates, fullmoondates,fullmooncounter){
-    console.log(dates)
     
     let isAdhimasa = false
     let doublefullmoonmonth = null
@@ -291,8 +290,6 @@ function fillTheCalendar(myear, isAdhimasa=null, lunardates=null){
         let monthlundates = null
         if(lunardates) monthlundates = lunardates.filter(ld => ld.month == months[m])
 
-        console.log(monthlundates)
-
 
         for(let i=0; i<tdlist.length;i++){
             if(i >= rowstartday && daycounter < dayarray.length){
@@ -373,7 +370,6 @@ function texttoData(){
             if(p.length>500) yeardata.push(p.nodeValue)
         }
 
-        console.log(yeardata)
     }
 }
 UIM.texttoData = texttoData
