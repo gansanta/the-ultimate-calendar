@@ -33,6 +33,7 @@ function addRow(table) {
     let celllist = []
     for(let i=0; i<=6; i++){//add cells
         let td = document.createElement("td")
+        //id = 
         td.setAttribute("class", "caltd")
         td.innerHTML = " "
 
@@ -251,6 +252,8 @@ UIM.clearCalendar = clearCalendar
         //let firstday = firstdate.getWeekDay()
         let firstdayval = firstdate.getDay()
 
+        let realmonth = m+1
+
         let modifiedmindex = m+1
         if(modifiedmindex>11) modifiedmindex = 0
 
@@ -295,8 +298,9 @@ UIM.clearCalendar = clearCalendar
                     let lundate = monthlundates.find(ld=> ld.day == dayarray[daycounter])
                     if(lundate) html += " "+lundate.phase[2] + "<br>"+lundate.palimonth
                 } 
-
+                
                 tdlist[i].innerHTML = html
+                tdlist[i].id = realmonth+"_"+dayarray[daycounter]
 
                 daycounter++
             }
@@ -657,7 +661,28 @@ function hideFloatings(){
 }
 UIM.hideFloatings = hideFloatings
 
+//--------------------R-------------------------//
+function removePreEventRowSelection(){
+    let preselect = document.querySelector(".eventrowselected")
+    if(preselect && preselect.classList.contains("eventrowselected")) preselect.classList.remove("eventrowselected")
+    
+}
+function removePreDateTdSelection(){
+    let preselect = document.querySelector(".datetdselected")
+    if(preselect && preselect.classList.contains("datetdselected")) preselect.classList.remove("datetdselected")
+    
+}
+
+
 //-----------------S------------------------------//
+function setEventRowSelected(eventrow){
+    removePreEventRowSelection()
+    eventrow.classList.add("eventrowselected")
+}
+function setDateTdSelected(datetd){
+    removePreDateTdSelection()
+    datetd.classList.add("datetdselected")
+}
 function setBuddhaBirthDate(){
 
 }
@@ -772,8 +797,35 @@ async function showEvents(){
 
     if(eventdates){
         for(let ev of eventdates){
-            let row = getEventRow(ev.event)
-            table.appendChild(row) //add row to table
+            let eventrow = getEventRow(ev.event)
+            table.appendChild(eventrow) //add row to table
+
+            eventrow.onclick = ()=>{
+                setEventRowSelected(eventrow)
+                let evyear = ev.startdate.getFullYear()
+                //For BC year input, add 1
+                if(evyear <= -1) evyear = evyear + 1
+
+                //check the year in the input
+                let input = document.getElementById("input")
+                let currentinputyear = input.value 
+                
+                if(evyear != currentinputyear){
+                    input.value = evyear
+                    document.getElementById("showcal").click()
+
+                    //and then find the td of the date
+                    let evdate = ev.startdate.getDate() 
+                    let evmonth = ev.startdate.getMonth()+1
+                    let tdid = evmonth+"_"+evdate
+                    let td = document.getElementById(tdid)
+                    td.scrollIntoView({block:'center'})
+                    setDateTdSelected(td)
+
+                    
+                }
+
+            }
         }
     }
     

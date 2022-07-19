@@ -116,3 +116,11 @@ th{
     font-weight: bold;
 
 }
+
+.eventrowselected{
+    font-weight: bold;
+}
+.datetdselected{
+    background-color: rgb(165, 67, 29);
+    color: white;
+}
