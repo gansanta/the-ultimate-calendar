@@ -2,18 +2,12 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
-#tablediv{
-    position: relative;
-    text-align: center;
+.maincontent{
+    border: 1px solid blue;
 }
 
-#outputtable{
-    position: fixed;
-    top: 0;
-    right: 10px;
-    display: table;
-    width: 500px;
-    table-layout: fixed;
+.yearheading{
+    text-align: center;
 }
 .inputbox{
     text-align: center;
@@ -27,6 +21,61 @@ body {
     border: 1px solid red;
 }
 
+.datadiv{
+    display: flex;
+    flex-direction: row;
+}
+
+.eventdiv{
+    min-width: 300px;
+    height: 60vh;
+    overflow-y: auto;
+    word-wrap: break-word;
+    background-color: antiquewhite;
+    position: relative;
+}
+
+/*History css*/
+.buttonsfloatingdiv{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 100;
+    
+}
+.evinputdiv{
+    padding: 20px;
+    flex-direction: column;
+    min-width: 200px;
+    max-width: 50%;
+    position: fixed;
+    justify-content: center;
+    font-size: 14px;
+    background-color: #6161ac;
+
+    margin: 0 auto;
+
+    top: 25%;
+    left: 25%;
+    /*transform: translate(-50%, 0);*/
+}
+.evinputbuttondiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+th{
+    background-color: #6161ac;
+    color: aliceblue;
+}
+
+
+
+#output{
+    height: 75vh;
+    overflow-y: auto;
+}
 .caltable{
     display: table;
     width: 500px;
@@ -38,4 +87,32 @@ body {
     padding: 5px;
     border: 1px solid gray;
     height: 50px;
+}
+
+.addremovediv{
+    flex-direction: row;
+    background-color: rgb(37, 21, 21);
+    color:white;
+    padding: 10px;
+    position:fixed;
+    z-index: 100;
+    
+}
+
+.adddiv, .removediv{
+    cursor: default;
+    padding: 10px;
+}
+
+.adddiv:hover{
+    background-color: rgb(9, 236, 130);
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    font-family: 'Times New Roman';
+}
+.removediv:hover{
+    background-color: rgb(235, 0, 0);
+    color:rgb(255, 255, 255);
+    font-weight: bold;
+
 }

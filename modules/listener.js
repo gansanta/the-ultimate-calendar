@@ -13,6 +13,8 @@ function onclickListeners(){
         else if(e.target.matches("#clear")) UIM.clearCalendar()//showcal
         else if(e.target.matches("#prev")) UIM.showPreviousCalendar()//showcal//prev
         else if(e.target.matches("#next")) UIM.showNextCalendar()//showcal//next
+
+        else if(e.target.matches(".addeventbtn")) UIM.showEventInputDiv(e)
     }
 }
 Listener.onclickListeners = onclickListeners
@@ -26,6 +28,7 @@ function setKeyListeners(){
     document.onkeyup = (e)=>{
         if(e.key === 'ArrowLeft') UIM.showPreviousCalendar()
         else if(e.key === 'ArrowRight') UIM.showNextCalendar()
+        else if(e.key === 'Escape') UIM.hideFloatings()
     } 
 }
 Listener.setKeyListeners = setKeyListeners

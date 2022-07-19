@@ -8,6 +8,7 @@ function init() {
     Listener.setKeyListeners()
 
     UIM.showCalendar()
+    UIM.showEvents()
 }
 
 

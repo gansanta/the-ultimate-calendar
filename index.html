@@ -19,18 +19,35 @@
             <button id="showcal">ShowCalendar</button>
             <button id="clear">clear</button>
         </div>
-        
-        <div id="output">
-            <ul id="outputul"></ul>
-            <ol id="outputol"></ol>
-            
-            <div id="outputdiv"></div>
+
+        <div>
+            <h3 class="yearheading"></h3>
         </div>
+        
+        <div class="datadiv">
+            <div class="eventdiv">
+                <div class="buttonsfloatingdiv">
+                    <button class="addeventbtn" title="Add Event">+</button>
+                </div>
+                
+                <div id="eventlistdiv"></div>
+            </div>
+            <div id="output">
+                <ul id="outputul"></ul>
+                <ol id="outputol"></ol>
+                
+                <div id="outputdiv"></div>
+            </div>
+        </div>
+        
     </div>
 
 
     <!-- Load js-->
     <script src="./js/moondata.js" charset="utf-8"></script>
+    <script src="./js/awesome-notifications.js" charset="utf-8"></script>
+    
+
     <!-- Load module -->
     <script type="module" src="./modules/index.js" charset="utf-8"></script>
 
